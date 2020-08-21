@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-object_detection_demo/Pods-object_detection_demo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ArsdkEngine/ArsdkEngine.framework
+${BUILT_PRODUCTS_DIR}/GroundSdk/GroundSdk.framework
+${PODS_ROOT}/SdkCore/SdkCore.framework

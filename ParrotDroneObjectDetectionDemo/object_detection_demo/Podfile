@@ -1,0 +1,22 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'object_detection_demo' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+    pod 'TensorFlowLiteSwift'
+    pod 'GroundSdk'
+    pod 'ArsdkEngine'
+    pod 'SdkCore'
+  # Pods for object_detection_demo
+
+  target 'object_detection_demoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'object_detection_demoUITests' do
+    # Pods for testing
+  end
+
+end

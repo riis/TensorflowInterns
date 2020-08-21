@@ -1,0 +1,6 @@
+framework module Pods_object_detection_demo_object_detection_demoUITests {
+  umbrella header "Pods-object_detection_demo-object_detection_demoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

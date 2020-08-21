@@ -1,0 +1,38 @@
+PODS:
+  - ArsdkEngine (1.2.1):
+    - GroundSdk (= 1.2.1)
+  - GroundSdk (1.2.1):
+    - SdkCore (= 1.2.1)
+  - SdkCore (1.2.1)
+  - TensorFlowLiteC (2.3.0):
+    - TensorFlowLiteC/Core (= 2.3.0)
+  - TensorFlowLiteC/Core (2.3.0)
+  - TensorFlowLiteSwift (2.3.0):
+    - TensorFlowLiteSwift/Core (= 2.3.0)
+  - TensorFlowLiteSwift/Core (2.3.0):
+    - TensorFlowLiteC (= 2.3.0)
+
+DEPENDENCIES:
+  - ArsdkEngine
+  - GroundSdk
+  - SdkCore
+  - TensorFlowLiteSwift
+
+SPEC REPOS:
+  trunk:
+    - ArsdkEngine
+    - GroundSdk
+    - SdkCore
+    - TensorFlowLiteC
+    - TensorFlowLiteSwift
+
+SPEC CHECKSUMS:
+  ArsdkEngine: 813ace36d96954dcab4157e1371ca6c42e9d976a
+  GroundSdk: b81b57d6355736a75d57115aa3e7a5de802326f8
+  SdkCore: e94bf0a6630a17f38845e38a31dcbf337d7d4180
+  TensorFlowLiteC: 51f50caf5777f740a70e2c1a5dbdc149e7aeb50b
+  TensorFlowLiteSwift: fb152cc1eec36b25b03a23c07f5d58113170af58
+
+PODFILE CHECKSUM: d0d8785dda84cd17da7622af78e2c24b023e5f54
+
+COCOAPODS: 1.9.3

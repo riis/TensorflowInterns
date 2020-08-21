@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_object_detection_demo_object_detection_demoUITests : NSObject
+@end
+@implementation PodsDummy_Pods_object_detection_demo_object_detection_demoUITests
+@end
