@@ -13,6 +13,7 @@ GENERATED_IMAGE_HEIGHT = 322
 # stop sign image used for image generation
 
 stop_sign_image = Image.open('stop_sign.jpg')
+yield_sign_image = Image.open('yield.jpg')
 
 # Randomly place the object on the image 
 def generate_image(object_image, new_image_path):
@@ -36,23 +37,34 @@ def generate_image(object_image, new_image_path):
     return object_info
 
 
-def generate_training_images_with_annotations(num_images, object_image):
+def generate_training_images_with_annotations(num_images, object_images, object_names):
     with open('annotations.csv', 'wt') as annotation_file:
         annotation_writer = csv.writer(annotation_file, delimiter=',')
         annotation_writer.writerow(['filename','width','height','class','xmin','ymin','xmax','ymax'])
         os.makedirs('training_images',exist_ok=True)
+
+        images_per_object = int(num_images / len(object_images))
+        current_object = 0
+        image_count = 0
+        annotations = []
         for i in range(0, num_images):
+            if(image_count == images_per_object):
+                current_object += 1
+                image_count = 0
             image_name = 'image_{}.jpg'.format(i)
-            info = generate_image(object_image, 'training_images/' + image_name)
-            annotation_writer.writerow([
+            info = generate_image(object_images[current_object], 'training_images/' + image_name)
+            annotations.append([
                 image_name,
                 info["width"],
                 info['height'],
-                'stop sign',
+                object_names[current_object],
                 info['xmin'],
                 info['ymin'],
                 info['xmax'],
-                info['ymax']]
-            )
-
-generate_training_images_with_annotations(10, stop_sign_image)
+                info['ymax']
+            ])
+            image_count += 1
+        random.shuffle(annotations)
+        annotation_writer.writerows(annotations)
+        
+generate_training_images_with_annotations(10, [stop_sign_image, yield_sign_image], ['stop sign', 'yield sign'])
